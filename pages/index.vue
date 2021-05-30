@@ -1,16 +1,26 @@
 <template>
   <div>
-    <h3>Select a functionality</h3>
+    <h3>Select an integration:</h3>
   <div class="utilities-container">
-    <div v-for="i in 20" :key="i">
-      <Function/>
+    <div v-for="app in apps" :key="app">
+      <Function v-bind:app="app"/>
     </div>
   </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      apps: [{ image: 'https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg', id: 'firebase' },
+        { image: 'https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg', id: 'google-cloud' },
+        { image: 'https://upload.vectorlogo.zone/logos/wolframalpha/images/565aee38-9660-487b-b267-175cb1dac863.svg', id: 'wolphram-alpha' },
+        { image: 'https://cdnjs.cloudflare.com/ajax/libs/simple-icons/4.13.0/github.svg', id: 'github' },
+        { image: 'https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg', id: 'mongoDB' }]
+    }
+  }
+}
 </script>
 
 <style scoped>

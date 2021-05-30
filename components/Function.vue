@@ -1,21 +1,24 @@
 <template>
-  <div class="container">
-    <img width="130px" src="https://globaleducationcoalition.unesco.org/uploads/222_Microbit_Educational_Foundation_color_logo_L1JPej.png?v=drqPpPus0q06Il2aCFAaocVL7eS295yXh0xY9eWkvJ0">
-  </div>
+  <NuxtLink :to="'\app?id=' + app.id" class="container">
+    <img width="100px" :src="app.image">
+  </NuxtLink>
 </template>
 
 <script>
 export default {
-  name: 'Function'
+  name: 'Function',
+  props: {
+    app: Object
+  }
 }
 </script>
 
 <style scoped>
   .container{
-    background-color: #fff;
-    border: 1px solid;
-    width: 230px;
-    height: 230px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 5px;
+    width: 180px;
+    height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,6 +27,6 @@ export default {
   .container:hover{
     cursor: pointer;
     transform: translateY(-15px);
-    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.14);
   }
 </style>
